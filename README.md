@@ -30,19 +30,19 @@ operation-用户操作管理<br>
 创建django项目<br>
 ``django-admin startproject MxOnline``<br>
 用pycharm打开后目录结构<br>
-![image](https://github.com/15529343201/MxOnline/blob/master/image/1.PNG)
+![image](https://github.com/15529343201/MxOnline/blob/master/image/1.PNG)<br>
 添加虚拟环境python解析器<br>
-![image](https://github.com/15529343201/MxOnline/blob/master/image/2.PNG)
+![image](https://github.com/15529343201/MxOnline/blob/master/image/2.PNG)<br>
 安装mysql<br>
 ``apt-get install mysql-server``<br>
-http://www.linuxidc.com/Linux/2014-05/102366.htm
+http://www.linuxidc.com/Linux/2014-05/102366.htm<br>
 安装mysql驱动<br>
 ``pip install mysql-python``<br>
-http://blog.csdn.net/wang1144/article/details/50965941
+http://blog.csdn.net/wang1144/article/details/50965941<br>
 ubuntu安装mysql可视化工具MySQL-workbench<br>
-http://blog.csdn.net/jgirl_333/article/details/48575281
+http://blog.csdn.net/jgirl_333/article/details/48575281<br>
 创建数据库<br>
-``CREATE DATABASE mxonline DEFAULT CHARACTER utf8;``
+``CREATE DATABASE mxonline DEFAULT CHARACTER utf8;``<br>
 配置setting<br>
 ```python
 DATABASES = {
@@ -56,15 +56,15 @@ DATABASES = {
 }
 ```
 生成django默认表<br>
-``python manage.py makemigrations``
-``python manage.py migrate``
+``python manage.py makemigrations``<br>
+``python manage.py migrate``<br>
 运行django<br>
-``python manage.py runserver``
+``python manage.py runserver``<br>
 浏览器显示:<br>
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/3.PNG)
 
 新建users app<br>
-``django-admin startapp users``
+``django-admin startapp users``<br>
 
 建立UserProfile model类<br>
 ```python
@@ -98,18 +98,18 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL="users.UserProfile"
 ```
 安装pillow<br>
-``pip install pillow``
+``pip install pillow``<br>
 users表migration<br>
-``python manage.py makemigrations``
-``python manage.py migrate``
+``python manage.py makemigrations``<br>
+``python manage.py migrate``<br>
 
 解决各model间循环引用问题<br>
-![image](https://github.com/15529343201/MxOnline/blob/master/image/4.PNG)
-![image](https://github.com/15529343201/MxOnline/blob/master/image/5.PNG)
-![image](https://github.com/15529343201/MxOnline/blob/master/image/6.PNG)
+![image](https://github.com/15529343201/MxOnline/blob/master/image/4.PNG)<br>
+![image](https://github.com/15529343201/MxOnline/blob/master/image/5.PNG)<br>
+![image](https://github.com/15529343201/MxOnline/blob/master/image/6.PNG)<br>
 users models.py<br>
-![image](https://github.com/15529343201/MxOnline/blob/master/image/7.PNG)
-完成users models.py编写最终代码:
+![image](https://github.com/15529343201/MxOnline/blob/master/image/7.PNG)<br>
+完成users models.py编写最终代码:<br>
 ```python
 # _*_ encoding:utf-8 _*_
 from __future__ import unicode_literals
@@ -161,9 +161,9 @@ class Banner(models.Model):
         verbose_name=u"轮播图"
         verbose_name_plural=verbose_name
 ```
-新建courses app
-![image](https://github.com/15529343201/MxOnline/blob/master/image/8.PNG)
-完成courses models
+新建courses app<br>
+![image](https://github.com/15529343201/MxOnline/blob/master/image/8.PNG)<br>
+完成courses models<br>
 ```python
 # _*_ encoding:utf-8 _*_
 from __future__ import unicode_literals
@@ -222,9 +222,9 @@ class CourseResource(models.Model):
         verbose_name=u"课程资源"
         verbose_name_plural=verbose_name
 ```
-新建organization app
-![image](https://github.com/15529343201/MxOnline/blob/master/image/9.PNG)
-完成organization models.py
+新建organization app<br>
+![image](https://github.com/15529343201/MxOnline/blob/master/image/9.PNG)<br>
+完成organization models.py<br>
 ```python
 # _*_ encoding:utf-8 _*_
 from __future__ import unicode_literals
@@ -274,9 +274,9 @@ class Teacher(models.Model):
         verbose_name=u"教师"
         verbose_name_plural=verbose_name
 ```
-新建operation app
-![image](https://github.com/15529343201/MxOnline/blob/master/image/11.PNG)
-完成operation models.py
+新建operation app<br>
+![image](https://github.com/15529343201/MxOnline/blob/master/image/11.PNG)<br>
+完成operation models.py<br>
 ```python
 # _*_ encoding:utf-8 _*_
 from __future__ import unicode_literals
@@ -355,8 +355,10 @@ class UserCourse(models.Model):
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/12.PNG)
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/13.PNG)
 把apps加入到python的搜索路径之下：
+```python
 import os
 import sys
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
+```
