@@ -18,3 +18,16 @@ http://www.linuxidc.com/Linux/2016-04/130196.htm<br>
 http://www.xuzefeng.com/post/89.html<br>
 http://blog.csdn.net/CV_YOU/article/details/77920945<br>
 http://blog.csdn.net/little_nai/article/details/70064604<br>
+# Django app
+users-用户管理
+course-课程管理
+organization-机构和教师管理
+operation-用户操作管理
+新建虚拟环境
+mkvirtualenv mxonline
+安装django
+pip install django==1.9
+创建django项目
+django-admin startproject MxOnline
+用pycharm打开后目录结构
+![image](https://github.com/15529343201/MxOnline/blob/master/image/1.PNG)
