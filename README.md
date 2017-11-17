@@ -347,14 +347,14 @@ class UserCourse(models.Model):
         verbose_name = u"用户课程"
         verbose_name_plural = verbose_name
 ```
-生成以上app的表
+生成以上app的表<br>
 
-新建python package名为apps
-![image](https://github.com/15529343201/MxOnline/blob/master/image/10.PNG)
-选中建立的4个app,鼠标拖动到apps中
-![image](https://github.com/15529343201/MxOnline/blob/master/image/12.PNG)
-![image](https://github.com/15529343201/MxOnline/blob/master/image/13.PNG)
-把apps加入到python的搜索路径之下：
+新建python package名为apps<br>
+![image](https://github.com/15529343201/MxOnline/blob/master/image/10.PNG)<br>
+选中建立的4个app,鼠标拖动到apps中<br>
+![image](https://github.com/15529343201/MxOnline/blob/master/image/12.PNG)<br>
+![image](https://github.com/15529343201/MxOnline/blob/master/image/13.PNG)<br>
+把apps加入到python的搜索路径之下：<br>
 ```python
 import os
 import sys
