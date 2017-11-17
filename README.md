@@ -24,26 +24,26 @@ course-课程管理<br>
 organization-机构和教师管理<br>
 operation-用户操作管理<br>
 新建虚拟环境<br>
-``mkvirtualenv mxonline``
+``mkvirtualenv mxonline``<br>
 安装django<br>
-``pip install django==1.9``
-创建django项目
-django-admin startproject MxOnline
-用pycharm打开后目录结构
+``pip install django==1.9``<br>
+创建django项目<br>
+``django-admin startproject MxOnline``<br>
+用pycharm打开后目录结构<br>
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/1.PNG)
-添加虚拟环境python解析器
+添加虚拟环境python解析器<br>
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/2.PNG)
-安装mysql
-apt-get install mysql-server
+安装mysql<br>
+``apt-get install mysql-server``<br>
 http://www.linuxidc.com/Linux/2014-05/102366.htm
-安装mysql驱动
-pip install mysql-python
+安装mysql驱动<br>
+``pip install mysql-python``<br>
 http://blog.csdn.net/wang1144/article/details/50965941
-ubuntu安装mysql可视化工具MySQL-workbench
+ubuntu安装mysql可视化工具MySQL-workbench<br>
 http://blog.csdn.net/jgirl_333/article/details/48575281
-创建数据库
-CREATE DATABASE mxonline DEFAULT CHARACTER utf8;
-配置setting
+创建数据库<br>
+``CREATE DATABASE mxonline DEFAULT CHARACTER utf8;``
+配置setting<br>
 ```python
 DATABASES = {
     'default': {
@@ -55,18 +55,19 @@ DATABASES = {
     }
 }
 ```
-生成django默认表
-python manage.py makemigrations
-python manage.py migrate
-运行django
-python manage.py runserver
-浏览器显示:
+生成django默认表<br>
+``python manage.py makemigrations``
+``python manage.py migrate``
+运行django<br>
+``python manage.py runserver``
+浏览器显示:<br>
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/3.PNG)
 
-新建users app
-django-admin startapp users
+新建users app<br>
+``django-admin startapp users``
 
-建立UserProfile model类
+建立UserProfile model类<br>
+```python
 class UserProfile(AbstractUser):
     nick_name = models.CharField(max_length=50,verbose_name=u"昵称",default="")
     birday = models.DateField(verbose_name=u"生日",null=True,blank=True)
@@ -81,8 +82,9 @@ class UserProfile(AbstractUser):
 
     def __unicode__(self):
         return self.username
-		
-在setting中注册:
+```		
+在setting中注册:<br>
+```python
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -94,17 +96,18 @@ INSTALLED_APPS = [
     'users',
 ]
 AUTH_USER_MODEL="users.UserProfile"
-安装pillow
-pip install pillow
-users表migration
-python manage.py makemigrations
-python manage.py migrate
+```
+安装pillow<br>
+``pip install pillow``
+users表migration<br>
+``python manage.py makemigrations``
+``python manage.py migrate``
 
-解决各model间循环引用问题
+解决各model间循环引用问题<br>
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/4.PNG)
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/5.PNG)
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/6.PNG)
-users models.py
+users models.py<br>
 ![image](https://github.com/15529343201/MxOnline/blob/master/image/7.PNG)
 完成users models.py编写最终代码:
 ```python
